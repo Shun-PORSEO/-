@@ -1,0 +1,78 @@
+以下に、要件に基づいて更新したYAMLファイルを提示します：
+
+```yaml
+src:
+  structure.yaml:
+    content: "会計システムのプロジェクト全体構造定義"
+    dependency: []
+
+  backend:
+    config:
+      database.yaml:
+        content: |-
+          PostgreSQL接続設定と環境別データベース構成
+          - 環境に応じた接続パラメータ管理
+          - セキュアな接続情報の定義
+          - 接続プールとタイムアウト設定
+          - 開発、本番、ステージング環境の詳細設定
+          - セキュリティとパフォーマンスを考慮した接続設定
+        dependency:
+          - src/backend/env/.env.production
+          - src/backend/env/.env.development
+
+    controllers:
+      invoice-controller.ts:
+        content: |-
+          請求書管理のAPIエンドポイントを制御するコントローラー
+          - RESTful APIエンドポイントの実装
+          - 請求書の作成、取得、更新、削除の処理
+          - 入力バリデーションと詳細なエラーハンドリング
+          - ビジネスロジックとサービス層との連携
+          - HTTPステータスコードを使用した適切なレスポンス
+        dependency:
+          - src/backend/services/invoice-service.ts
+          - src/backend/models/invoice-model.ts
+
+      payment-controller.ts:
+        content: |-
+          支払い処理のAPIエンドポイントを管理するコントローラー
+          - 支払いの作成、取得、更新、削除のRESTfulエンドポイント
+          - 入力バリデーションと詳細なエラーレスポンス
+          - 支払いサービスとの密接な連携
+          - エラーハンドリングと適切なHTTPステータスコード
+        dependency:
+          - src/backend/services/payment-service.ts
+          - src/backend/models/payment-model.ts
+
+    models:
+      invoice-model.ts:
+        content: |-
+          請求書のデータモデルを定義
+          - 請求書の属性と型定義
+          - データベースとのマッピング
+          - ビジネスロジックのメソッド実装
+          - 合計金額計算、ステータス更新
+          - 支払いとのリレーションシップ管理
+        dependency: 
+          - src/backend/config/database.yaml
+          - src/backend/models/payment-model.ts
+
+      payment-model.ts:
+        content: |-
+          支払いのデータモデルを定義
+          - 支払いの属性と型定義
+          - データベースとのマッピング
+          - 支払いバリデーションメソッド
+          - 支払いステータス管理
+          - 請求書との関連付け
+        dependency: 
+          - src/backend/config/database.yaml
+          - src/backend/models/invoice-model.ts
+
+    services:
+      invoice-service.ts:
+        content: |-
+          請求書のビジネスロジックを実装するサービス
+          - 請求書の作成、取得、更新、削除のメソッド
+          - データベースリポジトリとの対話
+          - 複雑なビジネスルールの適

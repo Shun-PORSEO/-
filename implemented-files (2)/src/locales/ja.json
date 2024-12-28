@@ -1,0 +1,78 @@
+{
+  "common": {
+    "title": "会計システム",
+    "actions": {
+      "create": "作成",
+      "edit": "編集",
+      "delete": "削除",
+      "save": "保存",
+      "cancel": "キャンセル",
+      "search": "検索"
+    },
+    "status": {
+      "pending": "未処理",
+      "completed": "完了",
+      "processing": "処理中"
+    }
+  },
+  "invoice": {
+    "title": "請求書",
+    "list": {
+      "title": "請求書一覧",
+      "empty": "請求書がありません"
+    },
+    "create": {
+      "title": "新規請求書",
+      "form": {
+        "clientName": "顧客名",
+        "invoiceNumber": "請求書番号",
+        "amount": "金額",
+        "dueDate": "支払期限",
+        "description": "説明"
+      }
+    },
+    "details": {
+      "total": "合計金額",
+      "tax": "消費税",
+      "subtotal": "小計"
+    }
+  },
+  "payment": {
+    "title": "支払い",
+    "list": {
+      "title": "支払い一覧",
+      "empty": "支払い履歴がありません"
+    },
+    "create": {
+      "title": "新規支払い",
+      "form": {
+        "paymentMethod": "支払い方法",
+        "amount": "支払い金額",
+        "date": "支払日",
+        "invoiceReference": "請求書参照"
+      }
+    },
+    "methods": {
+      "creditCard": "クレジットカード",
+      "bankTransfer": "銀行振込",
+      "cash": "現金"
+    }
+  },
+  "validation": {
+    "required": "必須項目です",
+    "invalidAmount": "無効な金額です",
+    "invalidDate": "無効な日付です"
+  },
+  "errors": {
+    "networkError": "ネットワークエラーが発生しました",
+    "serverError": "サーバーエラーが発生しました",
+    "unauthorized": "認証されていません"
+  },
+  "navigation": {
+    "dashboard": "ダッシュボード",
+    "invoices": "請求書",
+    "payments": "支払い",
+    "reports": "レポート",
+    "settings": "設定"
+  }
+};

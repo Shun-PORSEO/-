@@ -1,0 +1,58 @@
+src:
+  backend:
+    config:
+      database.yaml:
+        content: |-
+          PostgreSQL接続設定と環境別データベース構成
+          - 環境に応じた接続パラメータ管理
+          - セキュアな接続情報の定義
+          - 接続プールとタイムアウト設定
+        dependency:
+          - src/backend/env/.env.production
+          - src/backend/env/.env.development
+
+        database:
+          default: &default
+            adapter: postgresql
+            pool: 10
+            timeout: 5000
+            connect_timeout: 3
+            keepalives: true
+            keepalives_idle: 30
+
+          development:
+            <<: *default
+            host: ${DB_HOST_DEV}
+            port: ${DB_PORT_DEV}
+            database: ${DB_NAME_DEV}
+            username: ${DB_USER_DEV}
+            password: ${DB_PASSWORD_DEV}
+
+          production:
+            <<: *default
+            host: ${DB_HOST_PROD}
+            port: ${DB_PORT_PROD}
+            database: ${DB_NAME_PROD}
+            username: ${DB_USER_PROD}
+            password: ${DB_PASSWORD_PROD}
+            ssl: true
+            sslmode: require
+
+          staging:
+            <<: *default
+            host: ${DB_HOST_STAGING}
+            port: ${DB_PORT_STAGING}
+            database: ${DB_NAME_STAGING}
+            username: ${DB_USER_STAGING}
+            password: ${DB_PASSWORD_STAGING}
+
+        logging:
+          level: info
+          slow_query_threshold: 200
+          log_queries: false
+
+        connection_pool:
+          max_connections: 50
+          min_connections: 5
+          connection_timeout: 30000
+          idle_timeout: 10000;

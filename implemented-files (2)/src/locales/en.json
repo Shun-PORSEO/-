@@ -1,0 +1,82 @@
+{
+  "common": {
+    "appName": "Accounting System",
+    "actions": {
+      "create": "Create",
+      "edit": "Edit",
+      "delete": "Delete",
+      "save": "Save",
+      "cancel": "Cancel",
+      "search": "Search"
+    },
+    "status": {
+      "pending": "Pending",
+      "completed": "Completed",
+      "processing": "Processing",
+      "failed": "Failed"
+    }
+  },
+  "invoice": {
+    "title": "Invoices",
+    "create": {
+      "pageTitle": "Create New Invoice",
+      "customerName": "Customer Name",
+      "invoiceNumber": "Invoice Number",
+      "issueDate": "Issue Date",
+      "dueDate": "Due Date",
+      "totalAmount": "Total Amount",
+      "items": "Invoice Items"
+    },
+    "list": {
+      "pageTitle": "Invoice List",
+      "columns": {
+        "number": "Invoice No.",
+        "customer": "Customer",
+        "amount": "Amount",
+        "status": "Status",
+        "dueDate": "Due Date"
+      }
+    },
+    "details": {
+      "pageTitle": "Invoice Details"
+    }
+  },
+  "payment": {
+    "title": "Payments",
+    "create": {
+      "pageTitle": "Create New Payment",
+      "invoiceSelect": "Select Invoice",
+      "paymentMethod": "Payment Method",
+      "amount": "Payment Amount",
+      "date": "Payment Date"
+    },
+    "list": {
+      "pageTitle": "Payment History",
+      "columns": {
+        "invoice": "Invoice",
+        "amount": "Amount",
+        "method": "Method",
+        "date": "Date",
+        "status": "Status"
+      }
+    }
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidAmount": "Invalid amount",
+    "invalidDate": "Invalid date"
+  },
+  "errors": {
+    "fetchFailed": "Failed to fetch data",
+    "createFailed": "Failed to create record",
+    "updateFailed": "Failed to update record",
+    "deleteFailed": "Failed to delete record"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "invoices": "Invoices",
+    "payments": "Payments",
+    "reports": "Reports",
+    "settings": "Settings"
+  }
+};

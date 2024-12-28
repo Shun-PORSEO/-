@@ -1,0 +1,29 @@
+src/infrastructure/docker/docker-compose.yml:
+
+```yaml
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ../../backend
+      dockerfile: Dockerfile
+    container_name: accounting-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - ../../backend/env/.env.development
+    depends_on:
+      - postgres
+    volumes:
+      - ../../backend:/app
+      - /app/node_modules
+
+  frontend:
+    build:
+      context: ../../frontend
+      dockerfile: Dockerfile
+    container_name: accounting-frontend
+    ports
